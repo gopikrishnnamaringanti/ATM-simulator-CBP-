@@ -1,0 +1,38 @@
+package javacbp;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class Account {
+    private double balance;
+
+    public Account() {
+        this.balance = 0.0;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount+"/-");
+        } else {
+            System.out.println("Invalid amount.zero rupees cannott be added.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0) {
+            if (amount <= balance) {
+                balance -= amount;
+                System.out.println("Withdrawn: " + amount+"/-");
+            } else {
+                System.out.println("Insufficient funds.");
+            }
+        } else {
+            System.out.println("Invalid amount. Please enter a positive value.");
+        }
+    }
+}
